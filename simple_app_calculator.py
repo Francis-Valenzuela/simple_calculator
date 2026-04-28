@@ -1,17 +1,35 @@
+stored_value = None
 while True:
     try:
-        num_1 = float(input("Enter a number: "))
+        using_stored_value = "n"
+
+        if stored_value is not None:
+            using_stored_value = input("Do you want to stored value? [y/n]: ")
+
+        if using_stored_value == "y":
+            num_1 = stored_value
+        else:
+            num_1 = int(input("Enter a number: "))
+
         num_2 = float(input("Enter another number: "))
 
-        operation = input("Enter operation [+, -, *, /: ")
+        operation = input("Enter operation [+, -, *, /]: ")
         if operation == "+":
-            print(num_1 + num_2)
+            result = num_1 + num_2
         elif operation == "-":
-            print(num_1 - num_2)
+            result = num_1 - num_2
         elif operation == "*":
-            print(num_1 * num_2)
+            result = num_1 * num_2
         elif operation == "/":
-            print(num_1 / num_2)
+            result = num_1 / num_2
+        else:
+            print("Please enter a valid operation")
+
+        print("Result:", result)
+
+        use_saved_value = input("Do you want to store value? [y/n]: ")
+        if use_saved_value == "y":
+            stored_value = result
     except ValueError:
         print("Please enter a number")
         continue

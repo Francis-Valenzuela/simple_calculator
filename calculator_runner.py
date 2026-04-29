@@ -37,3 +37,6 @@ class CalculatorRunner(SimpleCalculator):
             calculate_again = input("Do you want to calculate again? [y/n]: ")
             if calculate_again != 'y':
                 break
+if __name__ == '__main__':
+    calculator = CalculatorRunner()
+    calculator.run()

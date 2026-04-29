@@ -9,7 +9,7 @@ class CalculatorRunner(SimpleCalculator):
                 using_stored_value = 'n'
 
                 if self.stored_value is not None:
-                    using_stored_value = input("Do you want to stored value? [y/n]: ")
+                    using_stored_value = input("Do you want to stored value? [y/n]: ").strip().lower()
 
                 if using_stored_value == 'y':
                     num_1 = self.stored_value
@@ -23,7 +23,7 @@ class CalculatorRunner(SimpleCalculator):
 
                 print('Result: ', result)
 
-                use_saved_value = input("Do you want to store value? [y/n]: ")
+                use_saved_value = input("Do you want to store value? [y/n]: ").strip().lower()
                 if use_saved_value == 'y':
                     self.stored_value = result
 
@@ -34,7 +34,7 @@ class CalculatorRunner(SimpleCalculator):
                 print("Please enter a numeric value")
                 continue
 
-            calculate_again = input("Do you want to calculate again? [y/n]: ")
+            calculate_again = input("Do you want to calculate again? [y/n]: ").strip().lower()
             if calculate_again != 'y':
                 break
 if __name__ == '__main__':
